@@ -1,0 +1,74 @@
+[package]
+name = "mini-swe-agent"
+version = "2.4.6"
+edition = "2024"
+rust-version = "1.85"
+description = "A minimal AI software engineering agent, rewritten in Rust"
+license = "MIT"
+repository = "https://github.com/Wiselfx/mini-swe-agent-rs"
+
+[dependencies]
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+serde_yaml = "0.9"
+include_dir = "0.4"
+minijinja = "2"
+regex = "1"
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "rustls-tls", "stream"] }
+clap = { version = "4", features = ["derive"] }
+rayon = "1"
+chrono = "0.4"
+uuid = { version = "1", features = ["v4"] }
+dirs = "6"
+tempfile = "3"
+dotenvy = "0.15"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "time"] }
+ratatui = "0.29"
+crossterm = "0.28"
+rand = "0.9"
+libc = "0.2"
+base64 = "0.22"
+os_pipe = "1"
+url = "2"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+wiremock = "0.6"
+
+[[bin]]
+name = "mini"
+path = "src/bin/mini.rs"
+
+[[bin]]
+name = "mini-swe-agent"
+path = "src/bin/mini_swe_agent.rs"
+
+[[bin]]
+name = "mini-extra"
+path = "src/bin/mini_extra.rs"
+
+[[bin]]
+name = "mini-e"
+path = "src/bin/mini_e.rs"
+
+[[bin]]
+name = "hello-world"
+path = "src/bin/hello_world.rs"
+
+[[bin]]
+name = "swebench"
+path = "src/bin/swebench.rs"
+
+[[bin]]
+name = "swebench-single"
+path = "src/bin/swebench_single.rs"
+
+[[bin]]
+name = "programbench"
+path = "src/bin/programbench.rs"
+
+[[bin]]
+name = "inspector"
+path = "src/bin/inspector.rs"

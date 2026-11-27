@@ -1,0 +1,9 @@
+/target/
+Cargo.lock.bak
+*.log
+.env
+.venv/
+.DS_Store
+preds.json
+exit_statuses*.yaml
+*.traj.json
